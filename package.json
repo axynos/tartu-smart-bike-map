@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "global": "^4.4.0",
+    "immutable": "^4.0.0-rc.12",
+    "mapbox-gl": "^1.12.0",
     "next": "^10.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-map-gl": "^5.2.10",
     "sass": "^1.29.0"
   }
 }

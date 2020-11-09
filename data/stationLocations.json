@@ -1,0 +1,711 @@
+[{
+  "name": "AHHAA",
+  "id": "46",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37690838410717,
+    "longitude": 26.733159580698846,
+    "radius": 0.0002474969367981228
+  }
+}, {
+  "name": "Aleksandri",
+  "id": "32",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.376155760301096,
+    "longitude": 26.72882871432966,
+    "radius": 0.0003433327633552717
+  }
+}, {
+  "name": "Annelinn",
+  "id": "07",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37644151692406,
+    "longitude": 26.76413785453569,
+    "radius": 0.0005235661958946253
+  }
+}, {
+  "name": "Annelinna gümnaasium",
+  "id": "06",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37539738276245,
+    "longitude": 26.76965496402911,
+    "radius": 0.0005931970035562168
+  }
+}, {
+  "name": "Annelinna keskus",
+  "id": "03",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.36999198126306,
+    "longitude": 26.76756802041361,
+    "radius": 0.00021026677335197666
+  }
+}, {
+  "name": "Annelinna kiir",
+  "id": "05",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37276648848736,
+    "longitude": 26.775054832631888,
+    "radius": 0.00037077626836104266
+  }
+}, {
+  "name": "Anne saun",
+  "id": "08",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.377918007958336,
+    "longitude": 26.75198050632707,
+    "radius": 0.00044494215736475614
+  }
+}, {
+  "name": "Aparaaditehas",
+  "id": "40",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37061269267058,
+    "longitude": 26.71522847081606,
+    "radius": 0.00017449960862637778
+  }
+}, {
+  "name": "Aura veekeskus",
+  "id": "33",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37527302928867,
+    "longitude": 26.734516054299988,
+    "radius": 0.0003717174695129827
+  }
+}, {
+  "name": "Delta",
+  "id": "65",
+  "area": {
+    "@class": "GeoPolygon",
+    "points": [{
+      "@class": "GeoPoint",
+      "latitude": 58.38470878134117,
+      "longitude": 26.725142822777684
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.384213848491946,
+      "longitude": 26.725700722252782
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38431508532155,
+      "longitude": 26.726312265908177
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.384562551904004,
+      "longitude": 26.726135240113194
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38481564093104,
+      "longitude": 26.72600649408048
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38470878134117,
+      "longitude": 26.725142822777684
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38470878134117,
+      "longitude": 26.725142822777684
+    }]
+  }
+}, {
+  "name": "Eeden",
+  "id": "68",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37337251322241,
+    "longitude": 26.751663997516516,
+    "radius": 0.0003608394897129412
+  }
+}, {
+  "name": "EMÜ spordihoone",
+  "id": "50",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.389713017049935,
+    "longitude": 26.694226903117844,
+    "radius": 0.00035685434571769425
+  }
+}, {
+  "name": "ERM",
+  "id": "13",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.394232799509695,
+    "longitude": 26.743827909607717,
+    "radius": 0.0004974854179581627
+  }
+}, {
+  "name": "Hipodroomi",
+  "id": "80",
+  "area": {
+    "@class": "GeoPolygon",
+    "points": [{
+      "@class": "GeoPoint",
+      "latitude": 58.353099030148094,
+      "longitude": 26.766507685944372
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.353113103238215,
+      "longitude": 26.766601563259893
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.35295689162321,
+      "longitude": 26.766722262665564
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.35294563310172,
+      "longitude": 26.766620338722998
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.353099030148094,
+      "longitude": 26.766507685944372
+    }]
+  }
+}, {
+  "name": "Ihaste",
+  "id": "61",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.34490494366701,
+    "longitude": 26.77949122838004,
+    "radius": 0.0002313372428787136
+  }
+}, {
+  "name": "J. Hurda",
+  "id": "42",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38370437352479,
+    "longitude": 26.708330824084562,
+    "radius": 0.00015787105615898628
+  }
+}, {
+  "name": "Kaare",
+  "id": "48",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.36632068132389,
+    "longitude": 26.703517080612624,
+    "radius": 0.00021341054497162445
+  }
+}, {
+  "name": "Kalda tee",
+  "id": "01",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.373882264236975,
+    "longitude": 26.75245980326202,
+    "radius": 0.00022758792577671182
+  }
+}, {
+  "name": "Kannikese",
+  "id": "20",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37705173816131,
+    "longitude": 26.683587356783857,
+    "radius": 0.00019345086528150418
+  }
+}, {
+  "name": "Karete",
+  "id": "37",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.35011961091752,
+    "longitude": 26.723180644798283,
+    "radius": 0.00018690593608977656
+  }
+}, {
+  "name": "Kaunase puiestee",
+  "id": "02",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37171147188115,
+    "longitude": 26.763747237926168,
+    "radius": 0.0003309865365142414
+  }
+}, {
+  "name": "K. E. von Baeri",
+  "id": "17",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38232270000801,
+    "longitude": 26.714181785668625,
+    "radius": 0.00020973152567924886
+  }
+}, {
+  "name": "Kivilinna",
+  "id": "69",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.3793394884845,
+    "longitude": 26.76508777339858,
+    "radius": 0.0003920866137006042
+  }
+}, {
+  "name": "Kopli",
+  "id": "64",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.34910935847107,
+    "longitude": 26.713521098182106,
+    "radius": 0.0002918993330755888
+  }
+}, {
+  "name": "Kuu",
+  "id": "36",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.36695355254711,
+    "longitude": 26.729511884477247,
+    "radius": 0.00026660564523556436
+  }
+}, {
+  "name": "Kvissentali",
+  "id": "62",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.406629815033796,
+    "longitude": 26.695974775798724,
+    "radius": 0.0007345476014779851
+  }
+}, {
+  "name": "Lossi",
+  "id": "47",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.379493687979355,
+    "longitude": 26.716314326758845,
+    "radius": 0.0002953139104468957
+  }
+}, {
+  "name": "Lõunakeskus",
+  "id": "51",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.35809453223964,
+    "longitude": 26.679403171409046,
+    "radius": 0.00045846947442934984
+  }
+}, {
+  "name": "Maarjamõisa",
+  "id": "63",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.369169212378914,
+    "longitude": 26.698270553852485,
+    "radius": 0.0005263811019933085
+  }
+}, {
+  "name": "Magistri",
+  "id": "56",
+  "area": {
+    "@class": "GeoPolygon",
+    "points": [{
+      "@class": "GeoPoint",
+      "latitude": 58.38053545721047,
+      "longitude": 26.724455169796784
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.380591705794984,
+      "longitude": 26.724739483952362
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38103606645955,
+      "longitude": 26.724417618870575
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38098544337524,
+      "longitude": 26.724101118206818
+    }, {
+      "@class": "GeoPoint",
+      "latitude": 58.38053545721047,
+      "longitude": 26.724455169796784
+    }]
+  }
+}, {
+  "name": "Mõisavahe",
+  "id": "04",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.372497773876134,
+    "longitude": 26.779650840146243,
+    "radius": 0.0002576689011810136
+  }
+}, {
+  "name": "Näituse",
+  "id": "18",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.379044284438365,
+    "longitude": 26.708666236286955,
+    "radius": 0.0003917544514188499
+  }
+}, {
+  "name": "Orava",
+  "id": "15",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.39154608477629,
+    "longitude": 26.730300508269007,
+    "radius": 0.00032542258535332415
+  }
+}, {
+  "name": "Papli",
+  "id": "09",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37851038046743,
+    "longitude": 26.745209772836457,
+    "radius": 0.0001952226561194192
+  }
+}, {
+  "name": "Pargi",
+  "id": "35",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37085993581122,
+    "longitude": 26.72730338760061,
+    "radius": 0.00024569054157452634
+  }
+}, {
+  "name": "Pirogovi plats",
+  "id": "55",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38009177202168,
+    "longitude": 26.720996528261256,
+    "radius": 0.0002907988934870581
+  }
+}, {
+  "name": "Põhja puiestee",
+  "id": "11",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38323149867547,
+    "longitude": 26.75575640842611,
+    "radius": 0.0006061116334845194
+  }
+}, {
+  "name": "Põllu",
+  "id": "58",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.39933419164964,
+    "longitude": 26.712616521778042,
+    "radius": 0.0004413635777163614
+  }
+}, {
+  "name": "Postimaja",
+  "id": "26",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.345704978462415,
+    "longitude": 26.714569270531907,
+    "radius": 0.00027011293706477585
+  }
+}, {
+  "name": "Raatuse",
+  "id": "49",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.382496509190545,
+    "longitude": 26.73233731792982,
+    "radius": 0.00031971597835600996
+  }
+}, {
+  "name": "Raatuse kool",
+  "id": "44",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38363832623786,
+    "longitude": 26.73706299988964,
+    "radius": 0.0002944241565060709
+  }
+}, {
+  "name": "Rahinge",
+  "id": "71",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38136030446229,
+    "longitude": 26.620387671088693,
+    "radius": 0.00016777012923739558
+  }
+}, {
+  "name": "Rahu",
+  "id": "52",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.35754986500721,
+    "longitude": 26.72161759985236,
+    "radius": 0.00029754389731907613
+  }
+}, {
+  "name": "Raja",
+  "id": "22",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.361712493378974,
+    "longitude": 26.690654377616056,
+    "radius": 0.00030849242074624
+  }
+}, {
+  "name": "Ränilinn",
+  "id": "23",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.35347019086328,
+    "longitude": 26.684467762062567,
+    "radius": 0.00035379255681530027
+  }
+}, {
+  "name": "Raudteejaam",
+  "id": "29",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.374472568878694,
+    "longitude": 26.70740195033296,
+    "radius": 0.00028210898883286085
+  }
+}, {
+  "name": "Riiamäe",
+  "id": "66",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37412664560539,
+    "longitude": 26.722464264323655,
+    "radius": 0.00024247554785909668
+  }
+}, {
+  "name": "Roosi",
+  "id": "12",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38323777339813,
+    "longitude": 26.72767318070236,
+    "radius": 0.00034698845604861213
+  }
+}, {
+  "name": "Rüütli",
+  "id": "16",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38256694023905,
+    "longitude": 26.72110728887003,
+    "radius": 0.0002502240136478468
+  }
+}, {
+  "name": "Sepa turg",
+  "id": "60",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.34940236183083,
+    "longitude": 26.740795602836446,
+    "radius": 0.0002473325323632264
+  }
+}, {
+  "name": "Sõbra",
+  "id": "27",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.365215648230816,
+    "longitude": 26.72124059338228,
+    "radius": 0.00021992389303625908
+  }
+}, {
+  "name": "Soola",
+  "id": "45",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37728463108015,
+    "longitude": 26.73047327290058,
+    "radius": 0.00022504868369447215
+  }
+}, {
+  "name": "Sõpruse sild",
+  "id": "34",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.36924551095158,
+    "longitude": 26.740097496483028,
+    "radius": 0.0005621162940052585
+  }
+}, {
+  "name": "Tähtvere spordipark",
+  "id": "39",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38919653226851,
+    "longitude": 26.70632290440427,
+    "radius": 0.0003746583700681017
+  }
+}, {
+  "name": "Tamme gümnaasium",
+  "id": "53",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.36417505934207,
+    "longitude": 26.68954373863165,
+    "radius": 0.0003876803524972015
+  }
+}, {
+  "name": "Tamme kool",
+  "id": "67",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.36376640593231,
+    "longitude": 26.706736741581828,
+    "radius": 0.0002170532856033619
+  }
+}, {
+  "name": "Tamme puiestee",
+  "id": "24",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.3542627037466,
+    "longitude": 26.69671491213137,
+    "radius": 0.00024599033505055443
+  }
+}, {
+  "name": "Tamme staadion",
+  "id": "28",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.367648237833855,
+    "longitude": 26.712001974471146,
+    "radius": 0.0003810810492068086
+  }
+}, {
+  "name": "Tarmeko",
+  "id": "59",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.364404689058674,
+    "longitude": 26.739980635501233,
+    "radius": 0.00019506652031137431
+  }
+}, {
+  "name": "Torni",
+  "id": "38",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.387468056466204,
+    "longitude": 26.69550393367683,
+    "radius": 0.00026020226746197576
+  }
+}, {
+  "name": "Tulbi",
+  "id": "19",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37127561919452,
+    "longitude": 26.6939584716182,
+    "radius": 0.00013622949679108012
+  }
+}, {
+  "name": "TÜ raamatukogu",
+  "id": "31",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37696587960199,
+    "longitude": 26.72200795425988,
+    "radius": 0.00025587377841830366
+  }
+}, {
+  "name": "Turusild",
+  "id": "10",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.378441698912724,
+    "longitude": 26.740928098206943,
+    "radius": 0.00024064364027223128
+  }
+}, {
+  "name": "Ujula",
+  "id": "70",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.39230062575567,
+    "longitude": 26.714195123589075,
+    "radius": 0.00014546527634382885
+  }
+}, {
+  "name": "Ülejõe park",
+  "id": "41",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38118318653399,
+    "longitude": 26.72742021685635,
+    "radius": 0.0003694302267809747
+  }
+}, {
+  "name": "Uueturu",
+  "id": "43",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37802808726612,
+    "longitude": 26.726194785728115,
+    "radius": 0.0003634009291080454
+  }
+}, {
+  "name": "Vabadussild",
+  "id": "57",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.38585930884755,
+    "longitude": 26.723933007168625,
+    "radius": 0.00038325618798039254
+  }
+}, {
+  "name": "Vahi",
+  "id": "14",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.4016476684009,
+    "longitude": 26.72246858410825,
+    "radius": 0.00022501707750321488
+  }
+}, {
+  "name": "Vanemuise park",
+  "id": "30",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.37355469587594,
+    "longitude": 26.715522253840618,
+    "radius": 0.00021411843762358842
+  }
+}, {
+  "name": "Veeriku",
+  "id": "54",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.3755839289969,
+    "longitude": 26.696735967087736,
+    "radius": 0.0002643244542483032
+  }
+}, {
+  "name": "Viie tee rist",
+  "id": "25",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.355114113189806,
+    "longitude": 26.709266920776606,
+    "radius": 0.0004953928806933036
+  }
+}, {
+  "name": "W. Ostwaldi",
+  "id": "21",
+  "area": {
+    "@class": "GeoCircle",
+    "latitude": 58.3667312622537,
+    "longitude": 26.69388559160095,
+    "radius": 0.0002518394520916353
+  }
+}]
