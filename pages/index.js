@@ -50,10 +50,13 @@ const Home = () => {
               id="point"
               type="circle"
               paint={{
-                'circle-radius': 3,
+                'circle-radius': 5,
                 'circle-color': '#FF0000'
               }} />
           </Source>
+          <Layer
+            id="building-extrusion-custom"
+            type="fill-extrusion" />
         </Map>
 
       </main>
