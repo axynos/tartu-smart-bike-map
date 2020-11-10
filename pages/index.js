@@ -2,16 +2,33 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import dynamic from 'next/dynamic'
 import { Source, Layer } from 'react-map-gl'
-import stationLocations from '../data/stationLocations.json'
 import { fromJS } from 'immutable'
+import useSWR from 'swr'
+
+const endpoint = 'https://tartu-smart-bikes-webhook.vercel.app/api/bikes'
 
 const Map = dynamic(
   () => import('../components/Map'),
   { ssr: false }
 )
 
-const stations = (_ => {
-  const features = stationLocations.map(station => {
+const getStations = async url => {
+  const data = await fetch(url).then(r => r.json())
+
+  const cleanStations = data.map(station => {
+    const { name, serialNumber, area, totalLockedCycleCount } = station
+
+    const cleanStation = {
+      name: name,
+      id: serialNumber,
+      area: area,
+      cycleCount: totalLockedCycleCount
+    }
+
+    return cleanStation
+  })
+
+  const features = cleanStations.map(station => {
     const feature = {
       type: 'Feature',
       geometry: {
@@ -19,23 +36,27 @@ const stations = (_ => {
         coordinates: [station.area.longitude ,station.area.latitude ]
       },
       properties: {
-        name: station.name
+        name: station.name,
+        radius: station.area.radius*15000,
+        cycleCount: Math.sqrt(station.cycleCount)*2
       }
     }
 
     return feature
   })
 
-  return features
-})()
+  const geojson = fromJS({
+    type: 'FeatureCollection',
+    features: features
+  })
 
-const geojson = fromJS({
-  type: 'FeatureCollection',
-  features: stations
-})
+  return geojson
+}
 
 
 const Home = () => {
+  const { data, error } = useSWR(endpoint, getStations)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -45,15 +66,17 @@ const Home = () => {
 
       <main className={styles.main}>
         <Map position={[58.370, 26.725]} zoom={12.15}>
-          <Source id="stations" type="geojson" data={geojson}>
-            <Layer
-              id="point"
-              type="circle"
-              paint={{
-                'circle-radius': 5,
-                'circle-color': '#FF0000'
-              }} />
-          </Source>
+          {data ?
+            <Source id="stations" type="geojson" data={data}>
+              <Layer
+                id="point"
+                type="circle"
+                paint={{
+                  'circle-radius': ['get', 'cycleCount'],
+                  'circle-color': '#FF0000'
+                }} />
+            </Source>
+            : ''}
           <Layer
             id="building-extrusion-custom"
             type="fill-extrusion" />
