@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "deck.gl": "^8.3.9",
     "global": "^4.4.0",
     "immutable": "^4.0.0-rc.12",
     "mapbox-gl": "^1.12.0",
