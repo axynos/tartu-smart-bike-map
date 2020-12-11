@@ -1116,6 +1116,20 @@
     mjolnir.js "^2.3.0"
     probe.gl "^3.2.1"
 
+"@deck.gl/core@^8.3.11":
+  version "8.3.11"
+  resolved "https://registry.yarnpkg.com/@deck.gl/core/-/core-8.3.11.tgz#bc8b60ca3e2299901b38da4db8377fdd1ff84397"
+  integrity sha512-iNye73OKAJBS9lLsZVOeMisalUulYLn+Lf8Kv0B5Bu72GwoWMJPIQnu/YTdhQAa273jIkEAIJQ69ntaYxC5vGQ==
+  dependencies:
+    "@loaders.gl/core" "^2.3.0"
+    "@loaders.gl/images" "^2.3.0"
+    "@luma.gl/core" "^8.3.1"
+    "@math.gl/web-mercator" "^3.3.0"
+    gl-matrix "^3.0.0"
+    math.gl "^3.3.0"
+    mjolnir.js "^2.3.0"
+    probe.gl "^3.2.1"
+
 "@deck.gl/extensions@8.3.9":
   version "8.3.9"
   resolved "https://registry.yarnpkg.com/@deck.gl/extensions/-/extensions-8.3.9.tgz#2a9510cd0fa8ff63c0c593b0092d5f4b04aebc78"
@@ -1162,6 +1176,16 @@
     "@math.gl/polygon" "^3.3.0"
     earcut "^2.0.6"
 
+"@deck.gl/layers@^8.3.11":
+  version "8.3.11"
+  resolved "https://registry.yarnpkg.com/@deck.gl/layers/-/layers-8.3.11.tgz#fb1213132d8cda9e07b6f10f8feb158cb32f8d06"
+  integrity sha512-sEXUt237SCgrd/2h0PSbrIGnXoJ8RhB6ZPk/+i0331v7dXWtdZVS4HZNGUw8todnqmDzXEW6f6aU0b83ZrYdUw==
+  dependencies:
+    "@loaders.gl/images" "^2.3.0"
+    "@mapbox/tiny-sdf" "^1.1.0"
+    "@math.gl/polygon" "^3.3.0"
+    earcut "^2.0.6"
+
 "@deck.gl/mapbox@8.3.9":
   version "8.3.9"
   resolved "https://registry.yarnpkg.com/@deck.gl/mapbox/-/mapbox-8.3.9.tgz#de19a83bddebfdf8364e4c6e156dd69ecad35081"
@@ -1179,6 +1203,13 @@
   version "8.3.9"
   resolved "https://registry.yarnpkg.com/@deck.gl/react/-/react-8.3.9.tgz#a5443c248e011eb6e5ce5616ab165a9871b5e3be"
   integrity sha512-ZDu4HqK7fWlv9QPd5sF0WvbHiMMAzHn34iTgkfFVoHhX/8zHWjQKG7IprgeI90S6zV70H6HPIL9FKu/RlLYN0w==
+  dependencies:
+    prop-types "^15.6.0"
+
+"@deck.gl/react@^8.3.11":
+  version "8.3.11"
+  resolved "https://registry.yarnpkg.com/@deck.gl/react/-/react-8.3.11.tgz#c4db73e7b61640430488bc83f42055242d498948"
+  integrity sha512-+PLDINk+plDfkz9mnzFFbbOZfiVFI3Ra8E9Twr+u34fe72r/1yrZYJSyzb+XQN1M831xs4ygqPEBSl5A8JCxgQ==
   dependencies:
     prop-types "^15.6.0"
 

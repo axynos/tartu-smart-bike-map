@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+import DeckGL from '@deck.gl/react';
+import { GeoJsonLayer } from '@deck.gl/layers';
+import mapboxgl from 'mapbox-gl'
 import useSWR from 'swr'
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
-import { generateStationsGeoJSON, getStationsGeoJSON } from './data/stations'
 import styles from '../styles/Map.module.scss'
+import { generateStationsGeoJSON, getStationsGeoJSON } from './data/stations'
 
 const endpoint = 'https://tartu-smart-bikes-webhook.vercel.app/api/bikes'
 
-const MapboxMap = ({ position, zoom, pitch, rotate=false, terrain=false, initialStations }) => {
+const MapboxMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=false, initialStations }) => {
 
   // Generate initial data from prefetched stations data.
   const initialData = generateStationsGeoJSON(initialStations)
@@ -17,6 +19,7 @@ const MapboxMap = ({ position, zoom, pitch, rotate=false, terrain=false, initial
 
   const { data, error } = useSWR(endpoint, getStationsGeoJSON, options)
 
+  // Lifecycle management for the Mapbox component so we can avoid loading data at the wrong time.
   const [mapIsMounted, setMapIsMounted] = useState(false)
   const [mapIsInitialized, setMapIsInitialized] = useState(false)
 
@@ -33,7 +36,8 @@ const MapboxMap = ({ position, zoom, pitch, rotate=false, terrain=false, initial
         center: position,
         pitch: pitch,
         style: 'mapbox://styles/silverkruus/ckhanl4y90ilj18o1waihxjlh?optimize=true',
-        hash: true
+        // Interactivity is turned off because deck.gl handles the interactivity.
+        interactive: false
       })
 
       setMapIsMounted(true)
@@ -73,7 +77,7 @@ const MapboxMap = ({ position, zoom, pitch, rotate=false, terrain=false, initial
           }
         })
 
-        Map.addLayer({
+        /*Map.addLayer({
           id: 'stations',
           source: 'stations',
           type: 'circle',
@@ -81,12 +85,18 @@ const MapboxMap = ({ position, zoom, pitch, rotate=false, terrain=false, initial
             'circle-radius': ['get', 'circle-radius'],
             'circle-color': '#FF0000'
           }
-        })
+        })*/
 
         setMapIsInitialized(true)
       })
     }
   }, [mapIsMounted])
+
+  useEffect(_ => {
+    if (mapIsInitialized) {
+
+    }
+  }, [mapIsInitialized])
 
   // Enable camera rotation.
   /*useEffect(() => {
@@ -126,4 +136,46 @@ const MapboxMap = ({ position, zoom, pitch, rotate=false, terrain=false, initial
   )
 }
 
-export default MapboxMap
+const DeckGlMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=false, initialStations }) => {
+
+  const INITIAL_VIEW_STATE = {
+    latitude: position[1],
+    longitude: position[0],
+    zoom: zoom,
+    bearing: bearing,
+    pitch: pitch
+  }
+
+  const deckLayers = [
+    new GeoJsonLayer({
+      id: 'test',
+      data: data,
+      // Styles
+      filled: true,
+      pointRadiusMinPixels: 2,
+      pointRadiusScale: 1,
+      getRadius: f => 1,
+      getFillColor: [200, 0, 80, 180],
+      // Interactive props
+      pickable: true,
+      autoHighlight: true,
+      onClick: info =>
+        // eslint-disable-next-line
+        info.object && alert(`${info.object.properties.name} (${info.object.properties.abbrev})`)
+    })
+  ]
+
+  // Left off trying to combine deck.gl with mapbox-gl v2
+  // ViewState matching was my last idea
+
+  return (
+    <DeckGL
+    initialViewState={INITIAL_VIEW_STATE}
+    controller={true}
+    layers={deckLayers}>
+      <MapboxMap position={[26.721782, 58.379866]} zoom={17} pitch={70} initialStations={props.initialStations} />
+    </DeckGL>
+  )
+}
+
+export default DeckGlMap
