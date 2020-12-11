@@ -1,18 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-//import dynamic from 'next/dynamic'
-//import { Source, Layer } from 'react-map-gl'
-import { fromJS } from 'immutable'
 import useSWR from 'swr'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
 import React, { useState, useEffect } from 'react'
 
 const endpoint = 'https://tartu-smart-bikes-webhook.vercel.app/api/bikes'
-
-/*const Map = dynamic(
-  () => import('../components/Map'),
-  { ssr: false }
-)*/
 
 const getStations = async url => {
   const data = await fetch(url).then(r => r.json())
@@ -35,8 +27,8 @@ const getStations = async url => {
     let latitude = station.area.latitude
 
 
-    // Stations with a location defined as a GeoPolygon don't have coordinates
-    // for the centre of the dock, so we find the center of the polygon instead.
+    // Stations with a location defined as a GeoPolygon don't have explicit coordinates
+    // for the centre of the dock, so we find the center of the given GeoPolygon instead.
     if (station.area['@class'] == 'GeoPolygon') {
       const longitudes = station.area.points.map(point => {
         if (point.longitude) {
@@ -72,11 +64,6 @@ const getStations = async url => {
 
     return feature
   })
-
-  /*const geojson = fromJS({
-    type: 'FeatureCollection',
-    features: features
-  })*/
 
   const geojson = {
     type: 'FeatureCollection',
@@ -199,22 +186,6 @@ const Home = props => {
       </Head>
 
       <main className={styles.main}>
-        {/*<Map position={[58.370, 26.725]} zoom={12.15}>
-          {data ?
-            <Source id="stations" type="geojson" data={data}>
-              <Layer
-                id="point"
-                type="circle"
-                paint={{
-                  'circle-radius': ['get', 'cycleCount'],
-                  'circle-color': '#FF0000'
-                }} />
-            </Source>
-            : ''}
-          <Layer
-            id="building-extrusion-custom"
-            type="fill-extrusion" />
-        </Map>*/}
         <div id="map" style={{ height: '100%', width: '100%' }}/>
 
       </main>

@@ -3,6 +3,8 @@ import { useState } from 'react';
 
 const accessToken = 'pk.eyJ1Ijoic2lsdmVya3J1dXMiLCJhIjoiY2toYW1rMXk4MWZ4MDJ4bzV1bnZ5YmI2MyJ9.uf-Mz0Hj73G-fNog7k4YqA'
 
+// This component is kept for reference reasons.
+
 // Position = [lat, lng]
 // Zoom = int
 const MapboxMap = ({position, zoom, children}) => {
