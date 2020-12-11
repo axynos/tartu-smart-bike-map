@@ -73,8 +73,6 @@ const getStations = async url => {
   return geojson
 }
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2lsdmVya3J1dXMiLCJhIjoiY2toYW1rMXk4MWZ4MDJ4bzV1bnZ5YmI2MyJ9.uf-Mz0Hj73G-fNog7k4YqA'
-
 
 const Home = props => {
   //console.log(props);
@@ -93,12 +91,14 @@ const Home = props => {
 
   useEffect(_ => {
       const map = new mapboxgl.Map({
+        accessToken: 'pk.eyJ1Ijoic2lsdmVya3J1dXMiLCJhIjoiY2toYW1rMXk4MWZ4MDJ4bzV1bnZ5YmI2MyJ9.uf-Mz0Hj73G-fNog7k4YqA',
         container: 'map',
         zoom: 17,
         // Tartu Town Hall
         center: [26.721782, 58.379866],
         pitch: 70,
-        style: 'mapbox://styles/silverkruus/ckhanl4y90ilj18o1waihxjlh'
+        style: 'mapbox://styles/silverkruus/ckhanl4y90ilj18o1waihxjlh',
+        hash: true
       })
 
       setPageIsMounted(true)
@@ -112,7 +112,8 @@ const Home = props => {
           type: 'raster-dem',
           url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
           tileSize: 512,
-          maxzoom: 22
+          maxzoom: 22,
+          tolerance: 1
         })
 
         // Does the map automatically update when the data changes?
