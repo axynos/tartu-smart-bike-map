@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.scss'
 import Map from '../components/Map'
 import Head from 'next/head'
-import { getStations} from '../components/data/stations'
+import { getStations } from '../components/data/stations'
 
 const Home = props => {
 
@@ -13,7 +13,7 @@ const Home = props => {
       </Head>
 
       <main className={styles.main}>
-        <Map position={[26.721782, 58.379866]} zoom={17} pitch={70} initialStations={props.initialStations}/>
+        <Map initialStations={props.initialStations}/>
       </main>
     </div>
   )

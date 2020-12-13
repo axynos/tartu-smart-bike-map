@@ -4,10 +4,9 @@
 
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
-import ReactMapGL from 'react-map-gl';
-import {StaticMap} from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import { GeoJsonLayer } from '@deck.gl/layers';
+import mapboxgl from 'mapbox-gl'
 import useSWR from 'swr'
 import styles from '../styles/Map.module.scss'
 import { generateStationsGeoJSON, getStationsGeoJSON } from './data/stations'
@@ -16,16 +15,41 @@ const endpoint = 'https://tartu-smart-bikes-webhook.vercel.app/api/bikes'
 
 const MapboxMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=false, initialStations }) => {
 
-  const [viewport, setViewport] = React.useState({
-    latitude: position[1],
-    longitude: position[0],
-    zoom: zoom,
-    pitch: pitch,
-    bearing: bearing,
-  });
+  // Generate initial data from prefetched stations data.
+  const initialData = generateStationsGeoJSON(initialStations)
+  const options = {
+    initialData: initialData
+  }
+
+  const { data, error } = useSWR(endpoint, getStationsGeoJSON, options)
+
+  // Lifecycle management for the Mapbox component so we can avoid loading data at the wrong time.
+  const [mapIsMounted, setMapIsMounted] = useState(false)
+  const [mapIsInitialized, setMapIsInitialized] = useState(false)
+
+  // https://dev.to/naomigrace/how-to-integrate-mapbox-gl-js-in-your-next-js-project-without-react-map-gl-or-a-react-wrapper-library-50f
+  const [Map, setMap] = useState()
+
+  // Create a map after component mounts.
+  // https://docs.mapbox.com/help/troubleshooting/mapbox-gl-js-performance/#remove-unused-features
+  useEffect(_ => {
+      const map = new mapboxgl.Map({
+        accessToken: 'pk.eyJ1Ijoic2lsdmVya3J1dXMiLCJhIjoiY2toYW1rMXk4MWZ4MDJ4bzV1bnZ5YmI2MyJ9.uf-Mz0Hj73G-fNog7k4YqA',
+        container: 'map',
+        zoom: zoom,
+        center: position,
+        pitch: pitch,
+        style: 'mapbox://styles/silverkruus/ckhanl4y90ilj18o1waihxjlh?optimize=true',
+        // Interactivity is turned off because deck.gl handles the interactivity.
+        interactive: true
+      })
+
+      setMapIsMounted(true)
+      setMap(map)
+  }, [])
 
   // Load sources and add them to the map as layers.
-  /*useEffect(_ => {
+  useEffect(_ => {
     if (mapIsMounted) {
       Map.once('load', () => {
         Map.addSource('mapbox-dem', {
@@ -70,10 +94,10 @@ const MapboxMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=fal
         setMapIsInitialized(true)
       })
     }
-  }, [mapIsMounted])*/
+  }, [mapIsMounted])
 
   // Enable camera rotation.
-  /*useEffect(() => {
+  useEffect(() => {
     if (mapIsMounted && mapIsInitialized && rotate) {
       Map.on('idle', () => {
         const rotateCamera = timestamp => {
@@ -89,15 +113,15 @@ const MapboxMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=fal
         //rotateCamera(0)
       })
     }
-  }, [mapIsInitialized])*/
+  }, [mapIsInitialized])
 
   // Update map with new data when new data has been fetched.
-  /*useEffect(_ => {
+  useEffect(_ => {
     if (mapIsMounted && mapIsLoaded && data) {
 
       Map.getSource('stations').setData(data)
     }
-  }, [data])*/
+  }, [data])
 
   return (
     <>
@@ -105,56 +129,37 @@ const MapboxMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=fal
         // Preload bike station data for faster data render.
         <link rel="preload" href={endpoint} as="fetch" crossOrigin="anonymous" />
       </Head>
-
-      <StaticMap
-        mapboxApiAccessToken='pk.eyJ1Ijoic2lsdmVya3J1dXMiLCJhIjoiY2toYW1rMXk4MWZ4MDJ4bzV1bnZ5YmI2MyJ9.uf-Mz0Hj73G-fNog7k4YqA'
-        mapStyle='mapbox://styles/silverkruus/ckhanl4y90ilj18o1waihxjlh?optimize=true'
-        style={{
-          width: '100%',
-          height: '100%'
-        }}
-        {...viewport}
-      />
+      <div id="map" className={styles['map-container']}/>
     </>
   )
 }
 
-const DeckGlMap = ({ initialStations }) => {
-
-  // Generate initial data from prefetched stations data.
-  const initialData = generateStationsGeoJSON(initialStations)
-  const options = {
-    initialData: initialData
-  }
-
-  const { data, error } = useSWR(endpoint, getStationsGeoJSON, options)
+const DeckGlMap = ({ position, zoom, pitch, bearing=0, rotate=false, terrain=false, initialStations }) => {
 
   const INITIAL_VIEW_STATE = {
-    latitude: 58.379866,
-    longitude: 26.721782,
-    zoom: 17,
-    bearing: 0,
-    pitch: 65
+    latitude: position[1],
+    longitude: position[0],
+    zoom: zoom,
+    bearing: bearing,
+    pitch: pitch
   }
 
   const deckLayers = [
-    // This is the base layer that sets all the stations on the map.
     new GeoJsonLayer({
-      id: 'stations',
+      id: 'test',
       data: data,
       // Styles
       filled: true,
-      stroked: false,
       pointRadiusMinPixels: 2,
-      pointRadiusScale: 4,
-      getRadius: f => f.properties.cycleCount,
-      getFillColor: [255, 0, 0, 180],
+      pointRadiusScale: 1,
+      getRadius: f => 1,
+      getFillColor: [200, 0, 80, 180],
       // Interactive props
       pickable: true,
       autoHighlight: true,
       onClick: info =>
         // eslint-disable-next-line
-        info.object && alert(`${info.object.properties.name}`)
+        info.object && alert(`${info.object.properties.name} (${info.object.properties.abbrev})`)
     })
   ]
 
@@ -162,15 +167,15 @@ const DeckGlMap = ({ initialStations }) => {
   // ViewState matching was my last idea
 
   return (
-    <DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
-      controller={true}
-      layers={deckLayers}>
-      <StaticMap
-        mapStyle='mapbox://styles/silverkruus/ckhanl4y90ilj18o1waihxjlh?optimize=true'
-        mapboxApiAccessToken='pk.eyJ1Ijoic2lsdmVya3J1dXMiLCJhIjoiY2toYW1rMXk4MWZ4MDJ4bzV1bnZ5YmI2MyJ9.uf-Mz0Hj73G-fNog7k4YqA' />
-    </DeckGL>
+    <MapboxMap position={[26.721782, 58.379866]} zoom={17} pitch={70} initialStations={props.initialStations} />
+
   )
 }
 
-export default DeckGlMap
+/*<DeckGL
+  initialViewState={INITIAL_VIEW_STATE}
+  controller={true}
+  layers={deckLayers}>
+</DeckGL>*/
+
+export default MapboxMap
