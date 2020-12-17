@@ -1,4 +1,4 @@
-const endpoint = 'https://tartu-smart-bikes-webhook.vercel.app/api/bikes'
+export const endpoint = 'https://tartu-smart-bikes-webhook.vercel.app/api/bikes'
 
 export const getStations = async (url=endpoint) => {
   const data = await fetch(url).then(r => r.json())
