@@ -11,7 +11,7 @@ const Timeline = props => {
 
   const pointCloudLayers = generatePointCloudLayers(props.pointCloudData)
   const baseStations = generateStationsGeoJSON(props.baseStations)
-  console.log(pointCloudLayers)
+  //console.log(pointCloudLayers)
 
   const stationsLayer = new GeoJsonLayer({
     id: 'stations',
